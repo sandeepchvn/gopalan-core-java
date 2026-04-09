@@ -14,7 +14,7 @@ public class Driver {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		StudentService service = new StudentServiceImp(2);
+		StudentService service = new StudentServiceImp(50);
 
 		while (true) {
 			try {
@@ -37,7 +37,9 @@ public class Driver {
 
 					System.out.print("Enter Name: ");
 					String name = sc.nextLine();
-
+					if (name == null || name.trim().isEmpty()) {
+					    throw new IllegalArgumentException("Student name cannot be null or empty");
+					}
 					System.out.print("Enter Age: ");
 					int age = Integer.parseInt(sc.nextLine());
 					if (age <= 0) {

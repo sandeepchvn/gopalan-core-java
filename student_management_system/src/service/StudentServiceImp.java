@@ -99,7 +99,7 @@ public class StudentServiceImp implements StudentService {
 
 		if (index == -1) {
 			throw new StudentNotFoundException("Student not found with ID: " + id);
-		}
+		} 
 
 		for (int i = index; i < count - 1; i++) {
 			students[i] = students[i + 1];
