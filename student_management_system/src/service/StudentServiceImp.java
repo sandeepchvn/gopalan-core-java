@@ -21,6 +21,12 @@ public class StudentServiceImp implements StudentService {
 		if (count == students.length) {
 			throw new StudentCountExceededException("Storage Full Cannot add more students");
 		}
+		for (int i = 0; i < count; i++) {
+			if (students[i].getId() == student.getId()) {
+				throw new IllegalArgumentException("Student with id "+student.getId()+" is already exist");
+			}
+		}
+
 		students[count++] = student;
 		System.out.println("student added successfully");
 	}
