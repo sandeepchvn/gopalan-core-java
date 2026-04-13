@@ -14,4 +14,6 @@ public interface StudentService {
 	void updateStudentByID(int id) throws StudentNotFoundException;
 
 	void deleteStudentByID(int id) throws StudentNotFoundException;
+	
+	void increaseCapacity();
 }

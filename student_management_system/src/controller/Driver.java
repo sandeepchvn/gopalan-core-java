@@ -16,7 +16,7 @@ public class Driver {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        StudentService service = new StudentServiceImp(50);
+        StudentService service = new StudentServiceImp(1);
         UserService userService = new UserService();
 
         User loggedInUser = null;
@@ -77,6 +77,7 @@ public class Driver {
 
                 if (role.equals("ADMIN")) {
                     System.out.println("5. Delete Student");
+                    System.out.println("7. increase Student capacity");
                 }
 
                 System.out.println("6. Exit");
@@ -151,7 +152,12 @@ public class Driver {
                 case 6:
                     System.out.println("Exiting... Thank you!");
                     System.exit(0);
+                    break;
 
+                case 7:
+                	service.increaseCapacity();
+                	break;
+                	
                 default:
                     System.out.println("Invalid choice");
                 }

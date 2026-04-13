@@ -113,4 +113,16 @@ public class StudentServiceImp implements StudentService {
 		students[--count] = null;
 		System.out.println("Student deleted successfully.");
 	}
+	@Override
+	public void increaseCapacity() {
+	    Student[] newArray = new Student[students.length * 2];
+
+	    for (int i = 0; i < students.length; i++) {
+	        newArray[i] = students[i];
+	    }
+
+	    students = newArray;
+
+	    System.out.println("Capacity increased to: " + students.length);
+	}
 }
