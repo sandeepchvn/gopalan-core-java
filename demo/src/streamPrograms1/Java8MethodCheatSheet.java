@@ -73,24 +73,27 @@ public class Java8MethodCheatSheet {
 //		.sorted(Collections.reverseOrder(Comparator.comparing(e->e.getSalary())))
 		.collect(Collectors.toList());
 	}
+	//find min or max sal emp
 	public static void m7() {
 		List<Employee> employees =EmployeeDataBase.getAllEmployees();
 		Optional<Employee> resu=employees.stream()
 //		.max(Comparator.comparing(e->e.getSalary()));	
 		.min(Comparator.comparing(e->e.getSalary()));	
-		System.out.println(resu);
+		System.out.println(resu.get());
 		
 	}
+	//grouping employee and storing in Map <Gender,Employee>
 	public static void m8() {
 		List<Employee> employees =EmployeeDataBase.getAllEmployees();
 		Map<String, List<Employee>> employeeGroup=employees.stream()
 		.collect(Collectors.groupingBy(e->e.getGender()));
 		System.out.println(employeeGroup);
 	}
+	//grouping employee and storing in Map <Gender,Name>
 	public static void m9() {
 		List<Employee> employees =EmployeeDataBase.getAllEmployees();
 		Map<String, List<String>> employeeGroup=employees.stream()
-				.collect(Collectors.groupingBy(e->e.getGender(),Collectors.mapping(e->e.getName(), Collectors.toList())));
+		.collect(Collectors.groupingBy(e->e.getGender(),Collectors.mapping(e->e.getName(), Collectors.toList())));
 		System.out.println(employeeGroup);
 	}
 	//gender count
