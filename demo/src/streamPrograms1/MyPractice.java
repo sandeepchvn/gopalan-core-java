@@ -246,7 +246,7 @@ public class MyPractice {
 
 	    System.out.println(duplicates);
 	    
-	    Collection<E>
+//	    Collection<E>
 		
 	}
 	//Sort customers by total spending
