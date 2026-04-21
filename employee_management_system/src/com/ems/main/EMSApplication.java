@@ -1,7 +1,6 @@
 package com.ems.main;
 
 import java.util.Scanner;
-
 import com.ems.model.Employee;
 import com.ems.service.EmployeeService;
 import com.ems.util.LoginManager;
@@ -14,7 +13,7 @@ public class EMSApplication {
         EmployeeService service = new EmployeeService();
         LoginManager login = new LoginManager();
 
-        // ✅ Login
+        //Login
         while (true) {
             System.out.print("Username: ");
             String user = sc.nextLine();
@@ -29,7 +28,7 @@ public class EMSApplication {
             }
         }
 
-        // ✅ Menu Loop
+        //Menu Loop
         while (true) {
             System.out.println("\n1.Add 2.View 3.Search 4.Update 5.Delete 6.Exit");
             int choice = sc.nextInt();
