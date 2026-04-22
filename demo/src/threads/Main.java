@@ -28,7 +28,7 @@ class Counter {
     	    System.out.println("Could not acquire lock");
     	}
     }
-//    . tryLock with Timeout
+//    tryLock with Timeout
     public static void m2() throws InterruptedException {
     	ReentrantLock lock = new ReentrantLock();
     	if (lock.tryLock(2, java.util.concurrent.TimeUnit.SECONDS)) {
